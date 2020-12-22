@@ -1,0 +1,25 @@
+{
+  "name": "car-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Car Studio",
+  "author": "Tim-Pet",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "license": "0BSD",
+  "dependencies": {
+    "gatsby": "^2.26.1",
+    "gatsby-plugin-sass": "^2.8.0",
+    "node-sass": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
