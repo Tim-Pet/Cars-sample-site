@@ -1,0 +1,18 @@
+.section {
+    height: 70vh;
+}
+
+.content {
+    display: flexbox;
+    flex: 1fr, 1fr;
+    justify-content: ;
+}
+
+.text {
+    width: 100%;
+    height: fit-content;
+}
+
+.img {
+    background-image: url('./picOne.jpg');
+}

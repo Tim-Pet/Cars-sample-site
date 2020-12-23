@@ -1,0 +1,18 @@
+.button {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 4vw;
+    color: #ffffff;
+    padding: 0vh 2vw;
+    mix-blend-mode: screen;
+    transition: border 0.3s;
+    position: absolute;
+    left: 35%;
+    top: 80%;
+    transform: translate(-50% -50%);
+}
+
+.button:hover {
+    border: #ffffff 5px solid;
+}

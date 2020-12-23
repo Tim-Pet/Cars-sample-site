@@ -1,0 +1,208 @@
+
+//height is 70px normal and 54px mobile
+//adjust paddings etc.
+//make classes react available
+:root 
+{
+	--background: rgba(255, 255, 255, 0.85);
+	--text-base: #000;
+	--logo-base: rgb(0, 0, 0);
+	--hover-base: grey;
+	--mobile-stack-base: #000;
+	--highlight-base:#000;
+}
+
+.section, .section::before, .section::after 
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	//background: #222;
+	font-weight: 400;
+}
+// body stylings etc sollten entfernt werden um hierüber nur die navbar zu stylen
+
+
+/* navigation styles start here*/
+
+.section 
+{
+	background: var(--background);
+	text-align: center;
+	position: fixed;
+	width: 100vw;
+	top: 0px;
+	z-index:1000;
+	color: var(--logo-base);
+	padding: 10px 0px;
+}
+/* logo Margin oft maßgebend für Höhe Header und Abstand Logo - Rest*/
+.logo 
+{
+	margin:0;
+	text-decoration: none;
+	font-size: 2rem;
+	font-weight: 600;	
+}
+
+.logo:visited {
+	color: #000000;
+}
+.logo:hover {
+	color: var(--hover-base);
+}
+
+
+.nav-toggle {
+	display: none;
+}
+
+.nav-toggle-label 
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+ /*Stack for mobile start*/
+.nav-toggle-label span, 
+.nav-toggle-label::before,
+.nav-toggle-label::after 
+{
+	display: block;
+	background: var(--mobile-stack-base);
+	height: 3px;
+	width: 2em;
+	border-radius: 2px;
+	position: relative;
+}
+
+.nav-toggle-label::before,
+.nav-toggle-label::after 
+{
+	content: '';
+	position: absolute;
+}
+
+.nav-toggle-label::before
+{
+	top: 18px;
+}
+
+.nav-toggle-label::after
+{
+	bottom: 18px;
+}
+
+.nav-toggle-label:hover {
+	cursor: pointer;
+}
+/*Stack for mobile end*/
+.navbar 
+{
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	left: 0;
+	background: var(--background);
+	width: 100%;
+	transform: scale(1,0); /*macht das Menü unsichtbar, minimiert es auf 0%*/
+	transform-origin: top;
+	transition: transform 400ms ease-in-out;
+}
+
+.nav-item {
+	color: var(--text-base);;
+	text-decoration: none;
+	font-size: 1.2rem;
+	line-height: 1.8rem;
+	text-transform: uppercase;
+	opacity: 0;
+	transition: opacity	150ms ease-in-out;
+	margin: 10px 0;
+}
+.nav-item:hover {
+	color: var(--hover-base);
+}
+.nav-item {
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+.nav-item-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav-toggle:checked ~ nav /* select the first nav element after the checkbox --> the nav bar with the list elements inside*/
+{
+	transform: scale(1,1); /*zieht das Menü wieder auf Normalgröße*/
+}
+
+.nav-toggle:checked ~nav .nav-item
+{
+	opacity: 1;
+	transition: opacity	250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) 
+{
+	.nav-toggle-label{
+		display: none;
+	}
+
+
+	.section {
+		display: grid;
+		grid-template-columns: minmax(10px, 0fr) auto minmax(600px, 4fr) 1fr;
+		padding: 10px 0px;
+	}
+
+	.logo {
+		grid-column: 2/  3; /*Logo in auto column*/
+	}
+
+	.navbar {
+		all: unset; /*removes all stylings before media*/
+		grid-column: 3/4;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.navbar ul {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.navbar li{
+		margin-left: 3em;
+		margin-bottom: 0;
+	}
+
+	.navbar .nav-item {
+		opacity: 1;
+		position: relative;
+	}
+
+	.navbar .nav-item::before {
+		content:'';
+		display:block;
+		height: 2px;
+		background: var(--highlight-base);
+		position: absolute;
+		top: -0.25em;
+		left: 0;
+		right: 0;
+		transform: scale(0, 1);
+		transform-origin: left;
+		transition: transform ease-in-out 250ms;
+	}
+
+	.navbar .nav-item:hover::before {
+		transform: scale(1,1);
+	}
+}
