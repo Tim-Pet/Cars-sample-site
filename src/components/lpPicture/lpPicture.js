@@ -28,7 +28,7 @@ const LpPicture = () => {
             <div className={lpPictureStyles.bg}>
                 <h2 className={lpPictureStyles.text}>Create Different</h2>
             </div>
-            <Button link='/cars' content='See more'/>
+            <Button link='/pictures' content='See more'/>
         </div>
     )
 }
