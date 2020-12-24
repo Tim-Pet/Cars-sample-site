@@ -1,5 +1,5 @@
 #Goal
-This site is meant to be a starter project to understand and improve the workflows in react and gatsby. 
+- This site is meant to be a starter project to understand and improve the workflows in react and gatsby. 
 
 #Learnings
 - Sass modules
