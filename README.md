@@ -3,8 +3,12 @@
 - This site is meant to be a starter project to understand and improve the workflows in react and gatsby. 
 
 ## Result
-![Hero Section](showcase/Hero_showcase.gif)
-![Pictures Section](showcase/Pictures_showcase.png)
+#### Landing Page
+<img src="./showcase/Hero_showcase.gif" width="500" />
+
+#### Pictures Page
+<img src="./showcase/Pictures_showcase.png" width="500" />
+
 
 ## Learnings
 - Sass modules
